@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>事件模型 | Akara的前端笔记</title>
+    <meta name="generator" content="VuePress 1.7.0">
+    <link rel="icon" href="/blog/favicon.ico">
+    <meta name="description" content="Fooly Cooly">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.e57ea1a4.css" as="style"><link rel="preload" href="/blog/assets/js/app.8456fffd.js" as="script"><link rel="preload" href="/blog/assets/js/2.8618d6ad.js" as="script"><link rel="preload" href="/blog/assets/js/16.d882b772.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.3ff23fab.js"><link rel="prefetch" href="/blog/assets/js/11.09b35f14.js"><link rel="prefetch" href="/blog/assets/js/12.a5230948.js"><link rel="prefetch" href="/blog/assets/js/13.da084bb4.js"><link rel="prefetch" href="/blog/assets/js/14.73ecbf39.js"><link rel="prefetch" href="/blog/assets/js/15.094f6105.js"><link rel="prefetch" href="/blog/assets/js/17.f99a3402.js"><link rel="prefetch" href="/blog/assets/js/18.efb4f04e.js"><link rel="prefetch" href="/blog/assets/js/19.07110711.js"><link rel="prefetch" href="/blog/assets/js/20.328904f9.js"><link rel="prefetch" href="/blog/assets/js/21.8cbdc7e9.js"><link rel="prefetch" href="/blog/assets/js/22.d2057d2a.js"><link rel="prefetch" href="/blog/assets/js/23.9f56128f.js"><link rel="prefetch" href="/blog/assets/js/24.b6b30cbb.js"><link rel="prefetch" href="/blog/assets/js/25.54438b61.js"><link rel="prefetch" href="/blog/assets/js/26.37498cf1.js"><link rel="prefetch" href="/blog/assets/js/27.2b58fbd4.js"><link rel="prefetch" href="/blog/assets/js/28.6c08951d.js"><link rel="prefetch" href="/blog/assets/js/29.e0f75c79.js"><link rel="prefetch" href="/blog/assets/js/3.b9f752a5.js"><link rel="prefetch" href="/blog/assets/js/30.ab15011f.js"><link rel="prefetch" href="/blog/assets/js/31.8cf1b6d0.js"><link rel="prefetch" href="/blog/assets/js/32.73cca382.js"><link rel="prefetch" href="/blog/assets/js/33.2a56a474.js"><link rel="prefetch" href="/blog/assets/js/34.42cb3d03.js"><link rel="prefetch" href="/blog/assets/js/35.94137746.js"><link rel="prefetch" href="/blog/assets/js/36.e851453a.js"><link rel="prefetch" href="/blog/assets/js/37.dfcaa02b.js"><link rel="prefetch" href="/blog/assets/js/38.773d62c5.js"><link rel="prefetch" href="/blog/assets/js/39.fff934a2.js"><link rel="prefetch" href="/blog/assets/js/4.5a189e09.js"><link rel="prefetch" href="/blog/assets/js/40.d1f5a698.js"><link rel="prefetch" href="/blog/assets/js/41.de3b1ae8.js"><link rel="prefetch" href="/blog/assets/js/42.3ad3f220.js"><link rel="prefetch" href="/blog/assets/js/43.4b9dc29e.js"><link rel="prefetch" href="/blog/assets/js/44.bb8ac6d0.js"><link rel="prefetch" href="/blog/assets/js/45.3de7dbda.js"><link rel="prefetch" href="/blog/assets/js/46.6e6c0e4f.js"><link rel="prefetch" href="/blog/assets/js/47.1c9bfac2.js"><link rel="prefetch" href="/blog/assets/js/48.484b889d.js"><link rel="prefetch" href="/blog/assets/js/49.b9d5c97f.js"><link rel="prefetch" href="/blog/assets/js/5.f2578a9e.js"><link rel="prefetch" href="/blog/assets/js/50.805af6ea.js"><link rel="prefetch" href="/blog/assets/js/51.e4b8b0bf.js"><link rel="prefetch" href="/blog/assets/js/52.88f0f15b.js"><link rel="prefetch" href="/blog/assets/js/53.dc5a22fc.js"><link rel="prefetch" href="/blog/assets/js/54.589407ad.js"><link rel="prefetch" href="/blog/assets/js/55.534c1c0e.js"><link rel="prefetch" href="/blog/assets/js/56.7e25d242.js"><link rel="prefetch" href="/blog/assets/js/57.4c00257c.js"><link rel="prefetch" href="/blog/assets/js/58.2846c49a.js"><link rel="prefetch" href="/blog/assets/js/59.5cdc41e2.js"><link rel="prefetch" href="/blog/assets/js/6.b035c77d.js"><link rel="prefetch" href="/blog/assets/js/60.69050108.js"><link rel="prefetch" href="/blog/assets/js/7.e580f382.js"><link rel="prefetch" href="/blog/assets/js/8.db5c9552.js"><link rel="prefetch" href="/blog/assets/js/9.d0e88da4.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.e57ea1a4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">Akara的前端笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/blog/frontend/" class="nav-link">
+  前端博客
+</a></div><div class="nav-item"><a href="/blog/mianshi/" class="nav-link">
+  面经
+</a></div><div class="nav-item"><a href="/blog/gossip/" class="nav-link">
+  杂记
+</a></div> <a href="https://github.com/messiahhh/blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/blog/frontend/" class="nav-link">
+  前端博客
+</a></div><div class="nav-item"><a href="/blog/mianshi/" class="nav-link">
+  面经
+</a></div><div class="nav-item"><a href="/blog/gossip/" class="nav-link">
+  杂记
+</a></div> <a href="https://github.com/messiahhh/blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="事件模型"><a href="#事件模型" class="header-anchor">#</a> 事件模型</h2> <blockquote><p>本文为初学前端时所写，未进行勘误便移植了过来，若有错误请见谅。</p></blockquote> <p>在讲解事件知识点之前，我想先举个例子，读者可以想想怎么优雅的实现这个功能。</p> <p>我们经常会有这样的需求：浏览器内部有个弹窗元素，当你点击弹窗外部的元素时，这个弹窗消失。但当你点击这个弹窗本身时，不会有任何影响。</p> <p>虽然听起来很简单，但如果不能理解事件模型的话，还是会感到很头疼的。</p> <p>因为当你点击弹窗的时候，实际上也等于点击了外部的元素。</p> <p>而如果只是给外部元素绑定事件来使内部元素消失， 那当你点击内部弹窗的时候，依然会触发外部元素的事件。</p> <h3 id="事件传播"><a href="#事件传播" class="header-anchor">#</a> 事件传播</h3> <p>我们知道，网页是由一层一层的HTML代码组成。就像同心圆一般，当我们点击内部的同心圆时，实际上也是点击了外部的同心圆。</p> <p>那么，浏览器具体是如何表现的呢？</p> <p>这里假设我们的HTML代码结构如下</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;body&gt;
+    &lt;div class=&quot;outer&quot;&gt;
+        &lt;div class=&quot;inner&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre></div><p>当我们点击inner元素的时候，其实可以看成两个部分。</p> <p>步骤①：依次点击window -&gt; document -&gt; body -&gt; outer -&gt; inner 。这个过程从外往里，所以叫做事件捕获。</p> <p>步骤②：依次点击inner -&gt; outer -&gt; body -&gt; document -&gt; window。这个过程从里往外，所以叫做事件冒泡。</p> <p>因此， 从外到内，再从内到外，每个元素相当于点击了两次。</p> <p>而同一个元素进行的两次点击也是不同的，本质区别就是这个点击事件的标志（FLAG）不同。</p> <p>这里的标志指的就是捕获和冒泡。</p> <p>总结而言，一个事件附加一个标志（FLAG），这个标志可以是捕获，或者是冒泡。</p> <h3 id="addeventlistener-type-listener-usecapture"><a href="#addeventlistener-type-listener-usecapture" class="header-anchor">#</a> addEventListener(type, listener[, useCapture])</h3> <ul><li><code>type</code>：事件名称，大小写敏感。</li> <li><code>listener</code>：监听函数。事件发生时，会调用该监听函数。</li> <li><code>useCapture</code>：布尔值。默认值为false</li></ul> <p>这个属性大家都很熟悉， 唯一可能不熟悉的就是第三个参数了， 毕竟大多数情况下可以省略（也就是使用默认值false）。那么这第三个参数（useCapture）具体是干什么的呢？</p> <p>我们开始说了，任何事件都会有个标志，捕获或是冒泡。</p> <p>那么，当我们给元素监听事件的时候，除了判断事件的种类（鼠标事件，键盘事件），也会判断事件本身的标志（FLAG）。</p> <p>而当参数useCapture设置为true的时候， 表明必须要是具有捕获标志的事件才能触发监听函数。</p> <p>而默认值是false， 也就是当事件的标志是冒泡才能触发监听函数。</p> <h3 id="e-stoppropagation"><a href="#e-stoppropagation" class="header-anchor">#</a> e.stopPropagation()</h3> <p>事件的传播顺序是先捕获再冒泡。而stopPropagation函数的作用是停止事件的传播。</p> <p>这是个很强大的方法。我们可以根据这个方法实现最初的需求</p> <div class="language- extra-class"><pre class="language-text"><code>let inner = document.querySelector('.inner')
+let outer = document.querySelector('.outer')
+
+inner.addEventListener('click', function (e) {
+    e.stopPropagation()
+}, true)
+
+outer.addEventListener('click', function (e) {
+    inner.style.display = 'none'
+}, false)
+</code></pre></div><p>解释一下</p> <p>当我们点击inner元素的时候，其实是这样的。</p> <p>①点击outer(捕获) -&gt; ②点击inner(捕获) -&gt; ③点击inner(冒泡) -&gt; ④点击outer(冒泡)</p> <p>那么我们只要把outer上监听的函数设置为冒泡（也就是useCapture: false）。</p> <p>然后通过e.stopPropagation()函数来使点击inner元素的时候，事件不传播到第四步就行了。</p> <h3 id="el-dispatchevent"><a href="#el-dispatchevent" class="header-anchor">#</a> el.dispatchEvent()</h3> <p>用来直接触发事件</p> <div class="language- extra-class"><pre class="language-text"><code>let e = new Event('click')
+inner.dispatchEvent(e)
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/messiahhh/blog/edit/master/docs/archive/浏览器的事件模型.md" target="_blank" rel="noopener noreferrer">Edit this page</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新时间:</span> <span class="time">4/12/2021, 6:41:57 PM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.8456fffd.js" defer></script><script src="/blog/assets/js/2.8618d6ad.js" defer></script><script src="/blog/assets/js/16.d882b772.js" defer></script>
+  </body>
+</html>
